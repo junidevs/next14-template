@@ -1,0 +1,13 @@
+node_modules
+build
+.dockerignore
+Dockerfile.development
+Dockerfile.staging
+Dockerfile.production
+app
+
+# ignore .evn files
+.env
+.env.development
+.env.production
+.env.test

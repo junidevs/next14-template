@@ -4,10 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-.yarn/install-state.gz
 
 # testing
 /coverage
+/tests/coverage
 
 # next.js
 /.next/
@@ -26,11 +26,40 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# idea
+/.idea
+
+# vscode
+/.vscode
+
+# ckeditor node modules folder
+/ckeditor/node_modules
+
+# public folder
+/public/robots.txt
+/public/sitemap-0.xml
+/public/sitemap.xml
+/public/__ENV.js
+
+# build info after running typecheck on tests files
+tsconfig.testsTypecheck.tsbuildinfo
+test-results/
+page-snapshots-test-results/
+playwright-report/
+playwright/.cache/
+
+# storybook static files
+storybook-static/
+
+# headers override feature
+dev.beta.ccfound.com/
+tst1.beta.ccfound.com/
+ccfound.com/

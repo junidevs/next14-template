@@ -1,0 +1,17 @@
+{
+  "semi": false,
+  "importOrder": [
+    "^react$",
+    "^(?!@/|\\.|test-utils)",
+    "^(@/(.*))|(test-utils)",
+    "^[./]"
+  ],
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": false,
+  "arrowParens": "always",
+  "trailingComma": "es5",
+  "endOfLine": "lf",
+  "bracketSpacing": true
+}

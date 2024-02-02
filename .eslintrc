@@ -1,0 +1,84 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true,
+    "es2021": true,
+    "jest/globals": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "jest",
+    "prettier",
+    "testing-library"
+  ],
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:prettier/recommended",
+    "plugin:jest/all",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+        "message": "Unexpected property on console object was called"
+      }
+    ],
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "prettier/prettier": "off",
+    "jest/prefer-expect-resolves": "off",
+    "jest/prefer-expect-assertions": "off",
+    "jest/prefer-lowercase-title": "off",
+    "react/jsx-boolean-value": "error",
+    "react/jsx-curly-brace-presence": "error",
+    "jest/no-hooks": [
+      "error",
+      {
+        "allow": [
+          "beforeAll",
+          "beforeEach",
+          "afterAll",
+          "afterEach"
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/(.+).(spec|test).(j|t)sx?"
+      ],
+      "extends": [
+        "plugin:testing-library/react"
+      ]
+    },
+    {
+      "files": [
+        "./tests/**/(.+).(spec|test).(j|t)sx?"
+      ],
+      "extends": [
+      ]
+    },
+    {
+      "files": [
+        "./tests/**/*"
+      ],
+      "rules": {
+        "jest/no-standalone-expect": "off",
+        "jest/require-hook": "off"
+      }
+    }
+  ]
+}
