@@ -1,11 +1,5 @@
 {
   "semi": false,
-  "importOrder": [
-    "^react$",
-    "^(?!@/|\\.|test-utils)",
-    "^(@/(.*))|(test-utils)",
-    "^[./]"
-  ],
   "printWidth": 80,
   "tabWidth": 2,
   "useTabs": false,
