@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn lint && yarn test:typecheck && yarn prettier:write && yarn prettier:check
@@ -9,7 +8,9 @@ if [ $? -eq 0 ]; then
   echo -e "\033[32mProject Linted Correctly
   |\---/|
   | o_o |
-   \_^_/ \033[0m"
+   \_^_/
+   033[0m"
 else
   echo -e "\033[31mERROR: Something went wrong\033[0m"
 fi
+

@@ -9,9 +9,16 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2023
   },
   "plugins": [
+    "import",
+    "react",
+    "simple-import-sort",
     "@typescript-eslint",
     "jest",
     "prettier",
@@ -35,13 +42,31 @@
         "message": "Unexpected property on console object was called"
       }
     ],
-    "@typescript-eslint/no-non-null-assertion": 0,
+    "react/display-name": "off",
+    "@next/next/no-img-element": "off",
+    "react/no-unescaped-entities": "off",
+    "import/no-anonymous-default-export": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "prettier/prettier": "off",
     "jest/prefer-expect-resolves": "off",
     "jest/prefer-expect-assertions": "off",
     "jest/prefer-lowercase-title": "off",
     "react/jsx-boolean-value": "error",
     "react/jsx-curly-brace-presence": "error",
+    "lines-around-comment": [
+      "error",
+      {
+        "beforeLineComment": true,
+        "beforeBlockComment": true,
+        "allowBlockStart": true,
+        "allowClassStart": true,
+        "allowObjectStart": true,
+        "allowArrayStart": true
+      }
+    ],
     "jest/no-hooks": [
       "error",
       {
@@ -53,6 +78,22 @@
         ]
       }
     ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": [
+          "./tsconfig.json"
+        ]
+      }
+    }
   },
   "overrides": [
     {
