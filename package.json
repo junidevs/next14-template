@@ -20,7 +20,8 @@
     "test:typecheck": "tsc --project tsconfig.json",
     "postinstall": "husky install",
     "prettier:write": "prettier . --write --config .prettierrc",
-    "prettier:check": "prettier . --check --config .prettierrc"
+    "prettier:check": "prettier . --check --config .prettierrc",
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -59,7 +60,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-testing-library": "^6.2.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.10",
     "jest": "^29.7.0",
     "lint-staged": "^15.2.1",
     "prettier": "^3.2.5",
