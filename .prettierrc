@@ -1,13 +1,10 @@
 {
   "semi": false,
-  "printWidth": 80,
   "tabWidth": 2,
-  "useTabs": false,
-  "singleQuote": false,
+  "printWidth": 120,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "trailingComma": "none",
   "arrowParens": "always",
-  "trailingComma": "es5",
-  "endOfLine": "lf",
-  "bracketSpacing": true,
-  "importOrder": [],
-  "importOrderSeparation": false
+  "endOfLine": "auto"
 }

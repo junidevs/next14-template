@@ -4,6 +4,11 @@
     "node": ">=18.x",
     "yarn": "1.22.21"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,12 +18,18 @@
     "lint": "next lint",
     "prepare": "husky install",
     "test:typecheck": "tsc --project tsconfig.json",
+    "postinstall": "husky install",
     "prettier:write": "prettier . --write --config .prettierrc",
     "prettier:check": "prettier . --check --config .prettierrc"
   },
   "lint-staged": {
-    "*.{js,jsx,md,ts,tsx,html,css,scss}": "yarn prettier:write",
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix --cache-location ./node_modules/.cache/.eslintcache"
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --config ./.prettierrc.js --write"
+    ],
+    "**/*.{css,scss,md,html,json}": [
+      "prettier --config ./.prettierrc.js --write"
+    ]
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -51,7 +62,7 @@
     "husky": "^8.0.3",
     "jest": "^29.7.0",
     "lint-staged": "^15.2.1",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "typescript": "^5.3.3",
     "typescript-eslint": "^0.0.1-alpha.0"
