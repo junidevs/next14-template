@@ -22,6 +22,8 @@
     "@typescript-eslint",
     "jest",
     "prettier",
+    "jest",
+    "prettier",
     "testing-library"
   ],
   "extends": [
@@ -31,7 +33,9 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",
     "plugin:jest/all",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "plugin:storybook/recommended",
+    "plugin:jest/all"
   ],
   "rules": {
     "no-console": "warn",
@@ -42,31 +46,13 @@
         "message": "Unexpected property on console object was called"
       }
     ],
-    "react/display-name": "off",
-    "@next/next/no-img-element": "off",
-    "react/no-unescaped-entities": "off",
-    "import/no-anonymous-default-export": "off",
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-non-null-assertion": 0,
     "prettier/prettier": "off",
     "jest/prefer-expect-resolves": "off",
     "jest/prefer-expect-assertions": "off",
     "jest/prefer-lowercase-title": "off",
     "react/jsx-boolean-value": "error",
     "react/jsx-curly-brace-presence": "error",
-    "lines-around-comment": [
-      "error",
-      {
-        "beforeLineComment": true,
-        "beforeBlockComment": true,
-        "allowBlockStart": true,
-        "allowClassStart": true,
-        "allowObjectStart": true,
-        "allowArrayStart": true
-      }
-    ],
     "jest/no-hooks": [
       "error",
       {
@@ -79,47 +65,15 @@
       }
     ]
   },
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".tsx"
-      ]
-    },
-    "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true,
-        "project": [
-          "./tsconfig.json"
-        ]
-      }
-    }
-  },
   "overrides": [
     {
       "files": [
-        "**/__tests__/**/*.[jt]s?(x)",
-        "**/(.+).(spec|test).(j|t)sx?"
+        "**/*.ts",
+        "**/*.tsx"
       ],
       "extends": [
         "plugin:testing-library/react"
       ]
-    },
-    {
-      "files": [
-        "./tests/**/(.+).(spec|test).(j|t)sx?"
-      ],
-      "extends": [
-      ]
-    },
-    {
-      "files": [
-        "./tests/**/*"
-      ],
-      "rules": {
-        "jest/no-standalone-expect": "off",
-        "jest/require-hook": "off"
-      }
     }
   ]
 }

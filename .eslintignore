@@ -39,5 +39,6 @@ yarn-error.log*
 
 # storybook
 /.storybook
-
+!.storybook
+!/.storybook
 /ckeditor
